@@ -31,6 +31,7 @@ import {
 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { createClient } from '@supabase/supabase-js'
+import { useState } from 'react'
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -56,6 +57,8 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 const ContactUsFormSupa = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -91,6 +94,7 @@ const ContactUsFormSupa = () => {
 
       // Reset the form
       form.reset()
+      setIsOpen(false) // Close the dialog after successful submission
     } catch (error) {
       console.error('Error submitting form:', error)
 
@@ -100,7 +104,7 @@ const ContactUsFormSupa = () => {
   }
 
   return (
-    <Dialog className="">
+    <Dialog className="" open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button
           variant="default"

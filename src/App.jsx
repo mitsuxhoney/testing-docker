@@ -1,11 +1,23 @@
 import { Routes, Route } from 'react-router-dom'
+import { Suspense, lazy } from 'react'
 import { Spinner } from './components/ui/spinner'
 import Layout from './components/Layout'
-import { Suspense, lazy } from 'react'
+
+const withSuspense = (Component) => (
+  <Suspense
+    fallback={
+      <div className="w-screen h-screen flex justify-center items-center">
+        <Spinner />
+      </div>
+    }
+  >
+    <Component />
+  </Suspense>
+)
+
 const Home = lazy(() => import('@/pages/Home/Home'))
 const Aadhar = lazy(() => import('@/pages/Aadhar/Aadhar'))
 const Business = lazy(() => import('@/pages/Business/Business'))
-
 const Identity = lazy(() => import('@/pages/Identity/Identity'))
 const ContactUs = lazy(() => import('@/pages/ContactUs/ContactUs'))
 const AboutUs = lazy(() => import('@/pages/AboutUs/AboutUs'))
@@ -58,81 +70,106 @@ const VoterVerification = lazy(() =>
 
 function App() {
   return (
-    <Suspense
-      fallback={
-        <div className="w-screen h-screen flex justify-center items-center">
-          <Spinner />
-        </div>
-      }
-    >
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/business">
-            <Route index element={<Business />} />
-            <Route
-              path="gst-otp-verification"
-              element={<GSTOTPVerification />}
-            />
-            <Route path="gst-verification" element={<GSTVerification />} />
-            <Route path="gst-to-phone" element={<GSTPhoneAPI />} />
-            <Route path="mca-data" element={<MCAData />} />
-            <Route path="mca-filed-docs" element={<MCAFiledDocs />} />
-            <Route path="tds-206-compliance" element={<TDSCompliance />} />
-            <Route path="fssai-verification" element={<FSSAIVerification />} />
-            <Route path="tan-verification" element={<TANVerification />} />
-            <Route path="udyog-verification" element={<UDYOGVerification />} />
-            <Route path="udyam-verification" element={<UDYAMVerification />} />
-            <Route path="iec-verification" element={<IECVerification />} />
-          </Route>
-          <Route path="/identity">
-            <Route index element={<Identity />} />
-            <Route path="pan-verification" element={<PanVerification />} />
-            <Route path="pan-comprehensive" element={<PANComprehensive />} />
-            <Route path="aadhaar-to-pan" element={<AadharPAN />} />
-            <Route path="pan-validation" element={<PANValidation />} />
-            <Route
-              path="aadhar-verification"
-              element={<AadharVerification />}
-            />
-            <Route
-              path="voter-id-verification"
-              element={<VoterVerification />}
-            />
-            <Route path="voter-id-ocr" element={<VoterOCR />} />
-            <Route path="dl-verification" element={<DLVerification />} />
-            <Route
-              path="passport-verification"
-              element={<PassportVerification />}
-            />
-            <Route path="passport-ocr" element={<PassportOCR />} />
-            <Route path="photo-id-ocr" element={<PhotoOCR />} />
-            <Route
-              path="vehicle-rc-verification"
-              element={<VehicleRCVerification />}
-            />
-            <Route path="chassis-to-rc" element={<ChasisRC />} />
-            <Route path="rc-with-financer" element={<RCFinancer />} />
-            <Route path="aadhaar-masking" element={<AadharMasking />} />
-          </Route>
-          <Route path="/aadhar">
-            <Route index element={<Aadhar />} />
-            <Route path="face-verification" element={<FaceVerification />} />
-            <Route path="e-sign" element={<AadharESign />} />
-          </Route>
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/about-us" element={<AboutUs />} />
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={withSuspense(Home)} />
+        <Route path="/business">
+          <Route index element={withSuspense(Business)} />
+          <Route
+            path="gst-otp-verification"
+            element={withSuspense(GSTOTPVerification)}
+          />
+          <Route
+            path="gst-verification"
+            element={withSuspense(GSTVerification)}
+          />
+          <Route path="gst-to-phone" element={withSuspense(GSTPhoneAPI)} />
+          <Route path="mca-data" element={withSuspense(MCAData)} />
+          <Route path="mca-filed-docs" element={withSuspense(MCAFiledDocs)} />
+          <Route
+            path="tds-206-compliance"
+            element={withSuspense(TDSCompliance)}
+          />
+          <Route
+            path="fssai-verification"
+            element={withSuspense(FSSAIVerification)}
+          />
+          <Route
+            path="tan-verification"
+            element={withSuspense(TANVerification)}
+          />
+          <Route
+            path="udyog-verification"
+            element={withSuspense(UDYOGVerification)}
+          />
+          <Route
+            path="udyam-verification"
+            element={withSuspense(UDYAMVerification)}
+          />
+          <Route
+            path="iec-verification"
+            element={withSuspense(IECVerification)}
+          />
         </Route>
-        <Route
-          path="/*"
-          element={
-            <div className="w-screen h-screen flex justify-center items-center">
-              404
-            </div>
-          }
-        />
-      </Routes>
-    </Suspense>
+        <Route path="/identity">
+          <Route index element={withSuspense(Identity)} />
+          <Route
+            path="pan-verification"
+            element={withSuspense(PanVerification)}
+          />
+          <Route
+            path="pan-comprehensive"
+            element={withSuspense(PANComprehensive)}
+          />
+          <Route path="aadhaar-to-pan" element={withSuspense(AadharPAN)} />
+          <Route path="pan-validation" element={withSuspense(PANValidation)} />
+          <Route
+            path="aadhar-verification"
+            element={withSuspense(AadharVerification)}
+          />
+          <Route
+            path="voter-id-verification"
+            element={withSuspense(VoterVerification)}
+          />
+          <Route path="voter-id-ocr" element={withSuspense(VoterOCR)} />
+          <Route
+            path="dl-verification"
+            element={withSuspense(DLVerification)}
+          />
+          <Route
+            path="passport-verification"
+            element={withSuspense(PassportVerification)}
+          />
+          <Route path="passport-ocr" element={withSuspense(PassportOCR)} />
+          <Route path="photo-id-ocr" element={withSuspense(PhotoOCR)} />
+          <Route
+            path="vehicle-rc-verification"
+            element={withSuspense(VehicleRCVerification)}
+          />
+          <Route path="chassis-to-rc" element={withSuspense(ChasisRC)} />
+          <Route path="rc-with-financer" element={withSuspense(RCFinancer)} />
+          <Route path="aadhaar-masking" element={withSuspense(AadharMasking)} />
+        </Route>
+        <Route path="/aadhar">
+          <Route index element={withSuspense(Aadhar)} />
+          <Route
+            path="face-verification"
+            element={withSuspense(FaceVerification)}
+          />
+          <Route path="e-sign" element={withSuspense(AadharESign)} />
+        </Route>
+        <Route path="/contact-us" element={withSuspense(ContactUs)} />
+        <Route path="/about-us" element={withSuspense(AboutUs)} />
+      </Route>
+      <Route
+        path="/*"
+        element={
+          <div className="w-screen h-screen flex justify-center items-center">
+            404
+          </div>
+        }
+      />
+    </Routes>
   )
 }
 

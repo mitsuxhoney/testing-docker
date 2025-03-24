@@ -230,7 +230,6 @@ const tabs = [
 ]
 
 const Feature108 = () => {
-  console.log(tabs[0].features)
   return (
     <section className="py-10">
       <div className="mx-auto">
@@ -268,7 +267,6 @@ const Feature108 = () => {
                 value={tab.value}
                 className="grid place-items-center gap-20 lg:grid-cols-1 lg:gap-10"
               >
-                {console.log(tab.features)}
                 <FeaturesSectionWithHoverEffects features={tab.features} />
               </TabsContent>
             ))}

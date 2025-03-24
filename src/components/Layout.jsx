@@ -11,7 +11,7 @@ const Layout = () => {
       <section className=" select-none">
         <Outlet />
       </section>
-      <footer className="mt-16">
+      <footer className="mt-16 relative bottom-0 left-0">
         <Footerdemo />
       </footer>
     </div>

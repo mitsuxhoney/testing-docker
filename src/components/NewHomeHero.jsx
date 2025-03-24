@@ -7,7 +7,7 @@ import ContactUsFormSupa from './ContactUsFormSupa'
 
 const NewHomeHero = ({ businessHero }) => {
   return (
-    <div className="py-12 mx-auto w-full overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('@/assets/homeHeroPNG.png')]">
+    <div className="py-12 lg:py-16 mx-auto w-full overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('@/assets/homeHeroPNG.png')]">
       <Wrapper>
         <div className="w-full flex flex-col gap-8 items-center mx-auto text-center">
           <Badge

@@ -298,28 +298,36 @@ const Navbar = () => {
     }
   }, [mobileMenuOpen])
 
+  const getCurrentSection = () => {
+    const path = window.location.pathname
+    if (path.includes('/identity')) return 'identity'
+    if (path.includes('/aadhar')) return 'aadhar'
+    return 'business' // Default to business for other pages
+  }
+
+  // Then modify the handleMouseEnter function
+  const handleMouseEnter = (menu) => {
+    if (window.innerWidth >= 768) {
+      setActiveDropdown(menu)
+      // Set category based on current page when opening Products dropdown
+      if (menu === 'products') {
+        setActiveCategory(getCurrentSection())
+      }
+    }
+  }
+
+  // Also update the toggleDropdown function the same way
   const toggleDropdown = (menu) => {
     if (activeDropdown === menu) {
       setActiveDropdown(null)
       setActiveCategory(null)
     } else {
       setActiveDropdown(menu)
-      // Set default category to 'business' when opening Products dropdown
+      // Set category based on current page when opening Products dropdown
       if (menu === 'products') {
-        setActiveCategory('business')
+        setActiveCategory(getCurrentSection())
       } else {
         setActiveCategory(null)
-      }
-    }
-  }
-
-  // Handle hover events for desktop
-  const handleMouseEnter = (menu) => {
-    if (window.innerWidth >= 768) {
-      setActiveDropdown(menu)
-      // Set default category to 'business' when opening Products dropdown
-      if (menu === 'products') {
-        setActiveCategory('business')
       }
     }
   }
@@ -355,11 +363,11 @@ const Navbar = () => {
   const getActiveCategoryColor = () => {
     switch (activeCategory) {
       case 'business':
-        return ''
+        return 'text-secondary'
       case 'identity':
-        return ''
+        return 'text-secondary'
       case 'aadhar':
-        return ''
+        return 'text-secondary'
       default:
         return 'text-foreground'
     }

@@ -16,6 +16,7 @@ import { FAQCTA } from '../../components/faq-cta'
 import LazyLoadMotion from '../../components/LazyLoadMotion'
 import { TerminalDemo } from '../../components/TerminalBentoItem'
 import { AnimatedListDemo } from '../../components/AnimatedListHome'
+import Impacts from '../../components/Impacts'
 
 const businessHero = {
   heading: 'Aadhar E-Sign Verification API',
@@ -77,42 +78,37 @@ const businessHero = {
 const features = [
   {
     badge: <ShieldCheckIcon className="w-5 h-5" />,
-    title: 'Fast & Reliable Aadhaar e-Sign',
+    title: 'Fast & Reliable',
     iconColor: 'text-purple-600 bg-purple-600/10',
     backgroundColor: 'bg-purple-600/10',
     className: 'lg:h-[340px] bg-purple-600/10 text-purple-600',
     description:
-      'Sign documents instantly with Aadhaar-based e-Sign, ensuring speed and authenticity.',
+      'Get instant verification with real-time data checks, ensuring accuracy and speed',
 
     component: (
-      <LazyLoadMotion>
-        <div className="absolute -bottom-48 -right-2 lg:-bottom-40 lg:-right-2">
-          <TerminalDemo />
-        </div>
-      </LazyLoadMotion>
+      <div className="absolute -bottom-48 -right-2 lg:-bottom-40 lg:-right-2">
+        <TerminalDemo />
+      </div>
     ),
   },
   {
     badge: <SendIcon className="w-5 h-5" />,
-    title: 'Secure & Compliant e-Signing',
+    title: 'Secure & Compliant',
     description:
-      'We follow Aadhaar e-Sign security protocols to ensure compliance and data protection.',
+      ' We follow industry-leading security standards to safeguard your data.',
     iconColor: 'text-primary bg-primary/10',
     backgroundColor: 'bg-primary/10',
     className: 'lg:h-[340px] bg-primary/10 text-primary',
     component: (
-      <LazyLoadMotion>
-        <div className="absolute -bottom-56 right-1 lg:-bottom-48 lg:right-2 lg:left-auto ">
-          <AnimatedListDemo />
-        </div>
-      </LazyLoadMotion>
+      <div className="absolute -bottom-56 right-1 lg:-bottom-48 lg:right-2 lg:left-auto ">
+        <AnimatedListDemo />
+      </div>
     ),
   },
   {
     badge: <BarChartIcon className="w-5 h-5" />,
-    title: 'Seamless Aadhaar e-Sign Integration',
-    description:
-      'Effortless API integration for Aadhaar-based e-Sign to streamline your workflows.',
+    title: 'Seamless Integration',
+    description: 'Our API-based verification enables effortless automation.',
     iconColor: 'text-yellow-600 bg-yellow-600/10',
     backgroundColor: 'bg-yellow-600/10',
     className: 'lg:h-[340px] bg-yellow-600/10 text-yellow-600',
@@ -216,6 +212,64 @@ const features = [
                   in="SourceGraphic"
                   in2="effect1_dropShadow_248_20967"
                   result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feMorphology
+                  radius="1"
+                  operator="erode"
+                  in="SourceAlpha"
+                  result="effect2_innerShadow_248_20967"
+                />
+                <feOffset dy="1" />
+                <feGaussianBlur stdDeviation="0.5" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0.8 0 0 0 0 0.780392 0 0 0 0 0.780392 0 0 0 0.2 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="shape"
+                  result="effect2_innerShadow_248_20967"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feMorphology
+                  radius="1"
+                  operator="erode"
+                  in="SourceAlpha"
+                  result="effect3_innerShadow_248_20967"
+                />
+                <feOffset dy="-1" />
+                <feGaussianBlur stdDeviation="0.5" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0.8 0 0 0 0 0.780392 0 0 0 0 0.780392 0 0 0 0.2 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="effect2_innerShadow_248_20967"
+                  result="effect3_innerShadow_248_20967"
                 />
               </filter>
             </defs>
@@ -359,63 +413,7 @@ const AadharESign = () => {
         </section>
       </Wrapper> */}
 
-      <section className="py-20 mb-16">
-        <div className=" mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Impact</h2>
-            <p className="">
-              Enhancing trust and security in digital transactions through
-              AI-driven verification.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">
-                <NumberTicker
-                  value={500}
-                  className="font-bold tracking-normal text-secondary"
-                />
-                <span className="text-secondary">+</span>
-              </div>
-              <p className="text-xl ">Businesses Verified</p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">
-                <NumberTicker
-                  value={1}
-                  className="font-bold tracking-normal text-secondary"
-                />
-                <span className="text-secondary">M+</span>
-              </div>
-              <p className="text-xl">Identities Verified</p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">
-                <NumberTicker
-                  value={1}
-                  className="font-bold tracking-normal text-secondary"
-                />
-                <span className="text-secondary">M+</span>
-              </div>
-              <p className="text-xl">Documents Verified</p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">
-                <NumberTicker
-                  value={1}
-                  className="font-bold tracking-normal text-secondary"
-                />
-                <span className="text-secondary">M+</span>
-              </div>
-              <p className="text-xl">Users Verified</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Impacts />
 
       <Wrapper>
         <div className="w-full">

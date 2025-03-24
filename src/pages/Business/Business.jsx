@@ -42,11 +42,9 @@ const features = [
       'Get instant verification with real-time data checks, ensuring accuracy and speed',
 
     component: (
-      <LazyLoadMotion>
-        <div className="absolute -bottom-48 -right-2 lg:-bottom-40 lg:-right-2">
-          <TerminalDemo />
-        </div>
-      </LazyLoadMotion>
+      <div className="absolute -bottom-48 -right-2 lg:-bottom-40 lg:-right-2">
+        <TerminalDemo />
+      </div>
     ),
   },
   {
@@ -58,11 +56,9 @@ const features = [
     backgroundColor: 'bg-primary/10',
     className: 'lg:h-[340px] bg-primary/10 text-primary',
     component: (
-      <LazyLoadMotion>
-        <div className="absolute -bottom-56 right-1 lg:-bottom-48 lg:right-2 lg:left-auto ">
-          <AnimatedListDemo />
-        </div>
-      </LazyLoadMotion>
+      <div className="absolute -bottom-56 right-1 lg:-bottom-48 lg:right-2 lg:left-auto ">
+        <AnimatedListDemo />
+      </div>
     ),
   },
   {

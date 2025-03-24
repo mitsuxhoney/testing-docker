@@ -6,7 +6,7 @@ import Layout from './components/Layout'
 const withSuspense = (Component) => (
   <Suspense
     fallback={
-      <div className="w-screen h-screen flex justify-center items-center">
+      <div className="w-full h-screen flex justify-center items-center">
         <Spinner />
       </div>
     }

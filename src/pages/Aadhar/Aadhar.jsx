@@ -26,17 +26,16 @@ const features = [
   {
     badge: <ShieldCheckIcon className="w-5 h-5" />,
     title: 'Fast & Reliable',
-    description:
-      'Get instant verification with real-time data checks, ensuring accuracy and speed',
     iconColor: 'text-purple-600 bg-purple-600/10',
     backgroundColor: 'bg-purple-600/10',
     className: 'lg:h-[340px] bg-purple-600/10 text-purple-600',
+    description:
+      'Get instant verification with real-time data checks, ensuring accuracy and speed',
+
     component: (
-      <LazyLoadMotion>
-        <div className="absolute -bottom-48 -right-2 lg:-bottom-40 lg:-right-2">
-          <TerminalDemo />
-        </div>
-      </LazyLoadMotion>
+      <div className="absolute -bottom-48 -right-2 lg:-bottom-40 lg:-right-2">
+        <TerminalDemo />
+      </div>
     ),
   },
   {
@@ -44,16 +43,14 @@ const features = [
     title: 'Secure & Compliant',
     description:
       ' We follow industry-leading security standards to safeguard your data.',
-    component: (
-      <LazyLoadMotion>
-        <div className="absolute lg:-bottom-48 lg:right-2 lg:left-auto -bottom-56 right-1">
-          <AnimatedListDemo />
-        </div>
-      </LazyLoadMotion>
-    ),
     iconColor: 'text-primary bg-primary/10',
     backgroundColor: 'bg-primary/10',
     className: 'lg:h-[340px] bg-primary/10 text-primary',
+    component: (
+      <div className="absolute -bottom-56 right-1 lg:-bottom-48 lg:right-2 lg:left-auto ">
+        <AnimatedListDemo />
+      </div>
+    ),
   },
   {
     badge: <BarChartIcon className="w-5 h-5" />,
@@ -561,7 +558,7 @@ const otherProductsHeading = {
 const Aadhar = () => {
   return (
     <div>
-      <div className="my-16">
+      <div className="">
         <Hero2 businessHero={businessHero} />
       </div>
       <Wrapper>

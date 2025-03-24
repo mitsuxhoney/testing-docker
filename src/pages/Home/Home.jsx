@@ -455,9 +455,9 @@ const Home = () => {
         </div>
       </Wrapper>
 
-      <LazyLoadMotion className="w-full">
+      {/* <LazyLoadMotion className="w-full">
         <Industries />
-      </LazyLoadMotion>
+      </LazyLoadMotion> */}
 
       <LazyLoadMotion>
         <CaseStudies {...caseStudiesData} />

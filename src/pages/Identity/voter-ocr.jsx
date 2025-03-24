@@ -16,6 +16,7 @@ import LazyLoadMotion from '../../components/LazyLoadMotion'
 import { TerminalDemo } from '../../components/TerminalBentoItem'
 import { AnimatedListDemo } from '../../components/AnimatedListHome'
 import { FAQCTA } from '../../components/faq-cta'
+import Impacts from '../../components/Impacts'
 
 const businessHero = {
   heading: 'Voter-ID OCR API',
@@ -85,11 +86,9 @@ const features = [
       'Get instant verification with real-time data checks, ensuring accuracy and speed',
 
     component: (
-      <LazyLoadMotion>
-        <div className="absolute -bottom-48 -right-2 lg:-bottom-40 lg:-right-2">
-          <TerminalDemo />
-        </div>
-      </LazyLoadMotion>
+      <div className="absolute -bottom-48 -right-2 lg:-bottom-40 lg:-right-2">
+        <TerminalDemo />
+      </div>
     ),
   },
   {
@@ -101,11 +100,9 @@ const features = [
     backgroundColor: 'bg-primary/10',
     className: 'lg:h-[340px] bg-primary/10 text-primary',
     component: (
-      <LazyLoadMotion>
-        <div className="absolute -bottom-56 right-1 lg:-bottom-48 lg:right-2 lg:left-auto ">
-          <AnimatedListDemo />
-        </div>
-      </LazyLoadMotion>
+      <div className="absolute -bottom-56 right-1 lg:-bottom-48 lg:right-2 lg:left-auto ">
+        <AnimatedListDemo />
+      </div>
     ),
   },
   {
@@ -416,63 +413,7 @@ const VoterOCR = () => {
         </section>
       </Wrapper> */}
 
-      <section className="py-20 mb-16">
-        <div className=" mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Impact</h2>
-            <p className="">
-              Enhancing trust and security in digital transactions through
-              AI-driven verification.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">
-                <NumberTicker
-                  value={500}
-                  className="font-bold tracking-normal text-secondary"
-                />
-                <span className="text-secondary">+</span>
-              </div>
-              <p className="text-xl ">Businesses Verified</p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">
-                <NumberTicker
-                  value={1}
-                  className="font-bold tracking-normal text-secondary"
-                />
-                <span className="text-secondary">M+</span>
-              </div>
-              <p className="text-xl">Identities Verified</p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">
-                <NumberTicker
-                  value={1}
-                  className="font-bold tracking-normal text-secondary"
-                />
-                <span className="text-secondary">M+</span>
-              </div>
-              <p className="text-xl">Documents Verified</p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2">
-                <NumberTicker
-                  value={1}
-                  className="font-bold tracking-normal text-secondary"
-                />
-                <span className="text-secondary">M+</span>
-              </div>
-              <p className="text-xl">Users Verified</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Impacts />
 
       <Wrapper>
         <div className="w-full">

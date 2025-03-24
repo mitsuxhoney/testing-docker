@@ -32,11 +32,9 @@ const items = [
       </span>
     ),
     header: (
-      <LazyLoadMotion>
-        <div className="absolute -bottom-44 -right-14 lg:-bottom-42 lg:-right-2">
-          <TerminalDemo />
-        </div>
-      </LazyLoadMotion>
+      <div className="absolute -bottom-44 -right-14 lg:-bottom-42 lg:-right-2">
+        <TerminalDemo />
+      </div>
     ),
     className: 'max-md:col-span-2 lg:col-span-1 lg:h-[260px] bg-yellow-500/10',
     icon: <IconClipboardCopy className="h-4 w-4" />,
@@ -46,11 +44,9 @@ const items = [
     heading: <h3>Efficient Data Extraction & Validation</h3>,
 
     header: (
-      <LazyLoadMotion>
-        <div className="relative w-full -right-20">
-          <OrbitingCirclesHome />
-        </div>
-      </LazyLoadMotion>
+      <div className="relative w-full -right-20">
+        <OrbitingCirclesHome />
+      </div>
     ),
     description: (
       <span className="text-sm">
@@ -251,11 +247,9 @@ const items = [
     ),
     contentClassName: 'gap-6',
     header: (
-      <LazyLoadMotion>
-        <div className="absolute -bottom-[17rem] right-0 lg:-bottom-48 lg:right-10">
-          <AnimatedListDemo />
-        </div>
-      </LazyLoadMotion>
+      <div className="absolute -bottom-[17rem] right-0 lg:-bottom-48 lg:right-10">
+        <AnimatedListDemo />
+      </div>
     ),
     className: 'max-md:col-span-2 lg:col-span-2 lg:h-[170px] bg-primary/10',
     icon: <IconTableColumn className="h-4 w-4" />,

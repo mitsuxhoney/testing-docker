@@ -189,7 +189,7 @@ export function CaseStudies() {
   ]
   return (
     <Wrapper>
-      <section className="pb-20 pt-6 bg-transparent relative overflow-hidden">
+      <section className="pb-20 pt-20 bg-transparent relative overflow-hidden">
         <div className="absolute inset-0 -z-10" />
         <div className="mx-auto">
           <div className="text-center mb-6">

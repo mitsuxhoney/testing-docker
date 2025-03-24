@@ -78,96 +78,100 @@ export function BorderBeamForm({ borderExists }) {
     }
   }
   return (
-    <Card className={cn('relative flex flex-col items-start overflow-hidden')}>
-      <CardHeader>
-        <CardTitle>Contact us</CardTitle>
-        <CardDescription>
-          Request a callback by filling the details below.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 flex flex-col"
-          >
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input placeholder="Name" {...field} className="w-full" />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="mobile_number"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      placeholder="Mobile Number"
-                      {...field}
-                      className="w-full"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="business_name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      type="text"
-                      placeholder="Business Name"
-                      {...field}
-                      className="w-full"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="Email"
-                      {...field}
-                      className="w-full"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <Button type="submit" className="w-full bg-secondary">
-              Get your API key
-            </Button>
-          </form>
-        </Form>
-      </CardContent>
-      <CardFooter />
-      <BorderBeam
-        duration={8}
-        size={100}
-        className="from-transparent via-red-500 to-transparent"
-      />
+    <div className="w-full lg:w-[75%]">
+      <Card
+        className={cn('relative flex flex-col items-start overflow-hidden')}
+      >
+        <CardHeader>
+          <CardTitle>Contact us</CardTitle>
+          <CardDescription>
+            Request a callback by filling the details below.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-4 flex flex-col"
+            >
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="Name" {...field} className="w-full" />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="mobile_number"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Mobile Number"
+                        {...field}
+                        className="w-full"
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="business_name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        type="text"
+                        placeholder="Business Name"
+                        {...field}
+                        className="w-full"
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        type="email"
+                        placeholder="Email"
+                        {...field}
+                        className="w-full"
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" className="w-full bg-secondary">
+                Get your API key
+              </Button>
+            </form>
+          </Form>
+        </CardContent>
+        <CardFooter />
+        <BorderBeam
+          duration={8}
+          size={100}
+          className="from-transparent via-red-500 to-transparent"
+        />
 
-      <BorderBeam
-        duration={8}
-        delay={3}
-        size={100}
-        className="from-transparent via-blue-500 to-transparent"
-      />
-    </Card>
+        <BorderBeam
+          duration={8}
+          delay={3}
+          size={100}
+          className="from-transparent via-blue-500 to-transparent"
+        />
+      </Card>
+    </div>
   )
 }

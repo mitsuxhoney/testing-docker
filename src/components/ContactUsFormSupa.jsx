@@ -114,21 +114,21 @@ const ContactUsFormSupa = () => {
           <ArrowRight />
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[600px] p-0 overflow-hidden select-none">
-        <div className="bg-gradient-to-br from-secondary/10 via-secondary/5 to-transparent p-6 pb-8 relative">
+      <DialogContent className="sm:max-w-[390px] p-0 overflow-hidden select-none">
+        <div className="bg-gradient-to-br from-secondary/10 via-secondary/5 to-transparent p-6 relative">
           <div className="absolute inset-0 bg-[linear-gradient(40deg,transparent_25%,rgba(68,68,68,0.05)_50%,transparent_75%)] opacity-20" />
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold tracking-tight bg-clip-text text-secondary bg-gradient-to-r from-secondary to-/80 flex items-center gap-2">
               Get Your API Keys
             </DialogTitle>
-            <DialogDescription className="text-left text-foreground/80 mt-2">
+            <DialogDescription className="max-w-[95%] text-left text-foreground/80 mt-2">
               Join thousands of developers building amazing applications with
               our API.
             </DialogDescription>
           </DialogHeader>
         </div>
 
-        <div className="p-6 space-y-6">
+        <div className="pl-6 pb-6 pr-6 space-y-6">
           <Form {...form}>
             <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
               <div className="grid gap-4">
@@ -138,13 +138,13 @@ const ContactUsFormSupa = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <div className="relative">
+                        <div className="relative w-full">
                           <User className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                           <Input
                             placeholder="Name"
                             autocomplete
                             {...field}
-                            className="w-full pl-10 transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+                            className=" pl-10 transition-all duration-200 focus:ring-2 focus:ring-primary/20"
                           />
                         </div>
                       </FormControl>
@@ -159,7 +159,7 @@ const ContactUsFormSupa = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <div className="relative">
+                        <div className="relative w-full">
                           <Building2 className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                           <Input
                             placeholder="Business Name"
@@ -179,7 +179,7 @@ const ContactUsFormSupa = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <div className="relative">
+                        <div className="relative w-full">
                           <Phone className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                           <Input
                             placeholder="Mobile Number"
@@ -199,7 +199,7 @@ const ContactUsFormSupa = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <div className="relative">
+                        <div className="relative w-full">
                           <Mail className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                           <Input
                             type="email"
@@ -220,7 +220,7 @@ const ContactUsFormSupa = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <div className="relative">
+                        <div className="relative w-full">
                           <Briefcase className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                           <Input
                             type="email"
@@ -236,7 +236,7 @@ const ContactUsFormSupa = () => {
                 />
               </div>
 
-              <div className="bg-secondary/10 rounded-lg p-4 mt-6">
+              {/* <div className="bg-secondary/10 rounded-lg p-4 mt-6">
                 <div className="flex items-start gap-3">
                   <AlertCircle className="w-5 h-5 text-muted-foreground mt-0.5" />
                   <div className="text-sm text-foreground/80">
@@ -247,17 +247,19 @@ const ContactUsFormSupa = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <DialogFooter className="flex justify-end gap-4 pt-4 border-t mt-6">
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-gradient-to-r from-secondary to-secondary/80 text-primary-foreground hover:opacity-90 transition-all duration-200 min-w-[140px]"
-                >
-                  <Key className="w-4 h-4 mr-2" />
-                  Get your API key
-                </Button>
+              <DialogFooter>
+                <div className="flex justify-start w-full gap-4 pt-4">
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-gradient-to-r from-secondary to-secondary/80 text-primary-foreground hover:opacity-90 transition-all duration-200 w-full"
+                  >
+                    <Key className="w-4 h-4 mr-2" />
+                    Get your API key
+                  </Button>
+                </div>
               </DialogFooter>
             </form>
           </Form>
